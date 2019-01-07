@@ -13,7 +13,11 @@ const db = require('./models/index.js');
 
 async function startServer(){
     await db.sequelize.sync({force:true});
-    app.listen(PORT,()=>console.log(`Serving fools on port ${PORT}`));
+    await db.burgers.create({
+        name:'Bacon Double Cheeseburger',
+        eaten:false
+    })
+    return app.listen(PORT,()=>console.log(`Serving fools on port ${PORT}`));
     
 }
 
