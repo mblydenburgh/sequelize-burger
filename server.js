@@ -21,6 +21,18 @@ async function startServer(){
         name:'Bacon Double Cheeseburger',
         eaten:false
     });
+    await db.burgers.create({
+        name:'Thanksgiving Turkey Burger',
+        eaten:false
+    });
+    await db.burgers.create({
+        name:'Chicken Parm Burger',
+        eaten:false
+    });
+    await db.burgers.create({
+        name:'Korean Pork Burger',
+        eaten:true
+    });
     return app.listen(PORT,()=>console.log(`Serving fools on port ${PORT}`));
     
 }
