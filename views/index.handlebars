@@ -1,0 +1,39 @@
+<main>
+    <h1>Welcome to Brgr Bar</h1>
+
+    <form action="/" method="post">
+    <h2>Order Form:</h2>
+    <hr>
+        <div>
+            <label for='burger-input'>Burger Name:</label>
+            <input type='text' id='burger-input' name='name' placeholder='Double-Stack'>
+        </div>
+        <button class='submit-button' type='submit'>Submit</button>
+    </form>
+
+    <div id='plate'>
+        <h2>Your Plate:</h2>
+        <hr>
+            {{#each burgers}}
+            {{#unless eaten}}
+                <div class='burger'>
+                    <span>{{ name }}</span>
+                    <button class="eat-button" data-id={{id}}>Eat Me</button>
+                </div>
+            {{/unless}}
+            {{/each}}
+    </div>
+
+    <div id='belly'>
+        <h2>Your Belly:</h2>
+        <hr>
+            {{#each burgers}}
+            {{#if eaten}}
+            <div class='burger'>
+                <span>{{ burger }}</span>
+                <button class="delete-button" data-id={{id}}>Composte</button>
+            </div>
+            {{/if}}
+            {{/each}}
+    </div>
+</main>

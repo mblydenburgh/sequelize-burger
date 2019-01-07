@@ -7,6 +7,10 @@ app.use(express.urlencoded({ extended:true }));
 app.use(express.json());
 app.use(express.static('public'));
 
+const expshbs = require('express-handlebars');
+app.engine("handlebars",expshbs({ defaultLayout:'main' }));
+app.set("view engine","handlebars");
+
 require('./routes/api-routes')(app);
 
 const db = require('./models/index.js');
@@ -16,7 +20,7 @@ async function startServer(){
     await db.burgers.create({
         name:'Bacon Double Cheeseburger',
         eaten:false
-    })
+    });
     return app.listen(PORT,()=>console.log(`Serving fools on port ${PORT}`));
     
 }
