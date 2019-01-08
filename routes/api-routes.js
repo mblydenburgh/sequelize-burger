@@ -42,7 +42,16 @@ module.exports = function(app){
     
     
     // DELETE Request to delte burger from database
-    
+    app.delete('/api/:id', async (req,res)=>{
+        const deleteId = req.params.id;
+        console.log(`deleting at id ${deleteId}`);
+        const data = await db.burgers.destroy({
+            where:{
+                id:deleteId
+            }
+        });
+        res.redirect('/');
+    })
     
     
 };
