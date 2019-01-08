@@ -1,10 +1,12 @@
 html{
     font-size: 10px;
+    background-color: #5a85b8;
 }
 body{
-    background: url('../images/food.png') center center fixed;
+    background: url('../images/burger.jpg') center center fixed no-repeat;
     font-family: 'Oswald', sans-serif;
     font-size:1.6rem;
+    min-height: 720px;
 }
 
 main{
