@@ -24,7 +24,21 @@ module.exports = function(app){
     
     
     // PUT Request to update burger state
-    
+    app.put('/api/:id', async (req,res)=>{
+        const updateId = req.params.id;
+        console.log(`updating eaten state at id ${updateId}`);
+        const data = await db.burgers.update(
+            {
+                eaten:true
+            },
+            {
+                where:{
+                    id:updateId
+                }
+            });
+            
+        res.redirect('/');
+    });
     
     
     // DELETE Request to delte burger from database
