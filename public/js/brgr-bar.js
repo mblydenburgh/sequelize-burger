@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded',function(event){
     console.log(`document loaded`);
     
-    const burgers = document.querySelectorAll('.burger');
+    // const burgers = document.querySelectorAll('.burger');
     const eatButtons = document.querySelectorAll('.eat-button');
     const deleteButtons = document.querySelectorAll('.delete-button');
-    const customerInputs = document.querySelectorAll('.customer-input');
-    console.log(customerInputs);
+    // const customerInputs = document.querySelectorAll('.customer-input');
+    // console.log(customerInputs);
     let eatingCustomer;
 
     eatButtons.forEach(button=>{
@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded',function(event){
             console.log(event.target.dataset.id);
             
             const id = event.target.dataset.id;
-            eatingCustomer =  customerInputs[id-1];
+            eatingCustomer =  document.getElementById(`customer-input${id}`);
             customerName = eatingCustomer.value;
             const data = {
                 eaten:true,
