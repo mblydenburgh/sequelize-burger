@@ -26,10 +26,16 @@ module.exports = function(app){
     // PUT Request to update burger state
     app.put('/api/:id', async (req,res)=>{
         const updateId = req.params.id;
+        // console.log(req.body.name);
+        const newEatenState = req.body.eaten;
+        const eatenBy = req.body.name;
+
         console.log(`updating eaten state at id ${updateId}`);
-        const data = await db.burgers.update(
+        
+        await db.burgers.update(
             {
-                eaten:true
+                eaten:newEatenState,
+                eatenBy: eatenBy
             },
             {
                 where:{

@@ -31,7 +31,7 @@ async function startServer(){
     });
     await db.burgers.create({
         name:'Korean Pork Burger',
-        eaten:true
+        eaten:false
     });
     return app.listen(PORT,()=>console.log(`Serving fools on port ${PORT}`));
     

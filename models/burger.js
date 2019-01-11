@@ -10,6 +10,9 @@ module.exports = function(sequelize,DataTypes){
         eaten:{
             type: DataTypes.BOOLEAN,
             allowNull: false
+        },
+        eatenBy:{
+            type: DataTypes.STRING,
         }
     });
     
