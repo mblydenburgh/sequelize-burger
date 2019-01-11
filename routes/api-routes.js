@@ -43,7 +43,19 @@ module.exports = function(app){
                 }
             });
             
-        res.redirect('/');
+        // res.redirect('/');
+    });
+    
+    app.post('/api/:id',async (req,res)=>{
+        console.log(`post request`);
+       const {name,burgerId} = req.body;
+       console.log(name,burgerId);
+       await db.customer.create({
+           name: name,
+           burgerId: burgerId
+       });
+       
+       res.redirect('/');
     });
     
     

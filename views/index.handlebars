@@ -19,7 +19,7 @@
                 <div id='burger{{id}}' class='burger'>
                     <span>{{ name }}</span>
                     <input name='customer-name' class='customer-input' id='customer-input{{id}}' placeholder='customer name'></input>
-                    <button class="eat-button" data-id={{id}}>Eat Me</button>
+                    <button class="eat-button burger" data-id={{id}}>Eat Me</button>
                 </div>
             {{/unless}}
             {{/each}}
@@ -33,7 +33,7 @@
             <div class='burger'>
                 <span>{{ name }}</span>
                 <span>Eaten by: {{ eatenBy }}</span>
-                <button class="delete-button" data-id={{id}}>Composte</button>
+                <button class="delete-button burger" data-id={{id}}>Composte</button>
             </div>
             {{/if}}
             {{/each}}
