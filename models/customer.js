@@ -9,8 +9,10 @@ module.exports = function(sequelize,DataTypes){
         Customer.belongsTo(models.burgers,{
             foreignKey:{
                 allowNull:false
-            }
-        });
+            },
+            onDelete:'cascade'
+        },
+        );
     };
     
     return Customer;
