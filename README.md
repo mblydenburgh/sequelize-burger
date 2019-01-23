@@ -12,4 +12,4 @@ The Burger Bar has three main sections, each with different database queries ass
 2. Your Plate - Here, you are able to add a a customer name to a burger and set its state to eaten, via a PUT request to update database entries.
 3. Your Belly - Here, eaten burgers can be deleted from the database via a DELETE request (also known as composting)
 
-![App Screenshot](./images/preview.PNG)
+![App Screenshot](./public/images/preview.PNG)
